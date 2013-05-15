@@ -10,6 +10,8 @@ are learning with the use of digital flashcards. No more writing on cards that
 can get lost, damaged, or you can not read. This application will allow the
 users to create multiple decks of different languages, edit, shuffle and score.
 
+View demo [*here*](http://furashcaado.herokuapp.com).
+
 Running the app
 ---------------
 
