@@ -1,6 +1,11 @@
-<h1>Decks</h1>
-<ul>
-  <% @decks.each do |deck| %>
-    <li><%= deck.name %></li>
-  <% end %>
-</ul>
+<div class="row">
+  <h1>Decks</h1>
+  <div class="small-4 columns">
+    <ul>
+      <% @decks.each do |deck| %>
+        <li><%= deck.name %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="small-8 columns"></div>
+</div>
