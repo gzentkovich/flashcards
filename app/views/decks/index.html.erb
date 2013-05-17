@@ -2,7 +2,7 @@
 <div class="row">
   <h1>Decks</h1>
   <div class="small-4 columns">
-    <p><%= link_to "New Deck", "/decks/new" %></p>
+    <p><%= link_to "New Deck", "/decks/new", :class => "button success round" %></p>
     <ul>
       <% @decks.each do |deck| %>
         <li>
