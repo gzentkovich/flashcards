@@ -21,10 +21,22 @@
   </head>
 
   <body>
+  <div class="row">
+    <div class="small-12 columns">
+      <% flash.each do |name, msg| %>
+        <a href="#" class="close">&times;</a>
+        <div data-alert class="div alert-box <%= name == :notice ? "success" : "alert" %> round">
+          <%= msg %>
+        </div>
+      <% end %>
+    </div>
 
-    <%= yield %>
+    <div class="small-12 columns">
+      <%= yield %>
+    </div>
+  </div>
 
-    
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -2,9 +2,14 @@
 <div class="row">
   <h1>Decks</h1>
   <div class="small-4 columns">
+    <p><%= link_to "New Deck", "/decks/new" %></p>
     <ul>
       <% @decks.each do |deck| %>
-        <li><%= deck.name %></li>
+        <li>
+          <%= link_to deck.name, "/decks/#{deck.id}" %>
+          <%= link_to "Edit", "/decks/#{deck.id}/edit", :class => "tiny button radius" %>
+          <%= link_to "Delete", "/decks/#{deck.id}", method: :delete, data: { confirm: 'Are you sure?' }, :class => "tiny button alert radius" %>
+        </li>
       <% end %>
     </ul>
   </div>
