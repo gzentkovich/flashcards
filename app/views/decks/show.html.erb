@@ -1,7 +1,10 @@
 <%= title @deck.name %>
 <div class="row">
-  <h1>Decks</h1>
-  <div class="small-4 columns">
-    <p> <%= @deck.name %> </p>
-  <div class="small-8 columns"></div>
+  <div class="small-12 columns">
+    <fieldset>
+    <legend>Deck</legend>
+      <p> <%= @deck.name %> </p>
+      <%= link_to "Back", decks_url, :class => "small button secondary radius" %><br />
+    </fieldset>
+  </div>
 </div>

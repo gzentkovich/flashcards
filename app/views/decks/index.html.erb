@@ -1,17 +1,30 @@
 <% title "Furashcaado App" %>
 <div class="row">
-  <h1>Decks</h1>
-  <div class="small-4 columns">
-    <p><%= link_to "New Deck", "/decks/new", :class => "button success round" %></p>
-    <ul>
-      <% @decks.each do |deck| %>
-        <li>
-          <%= link_to deck.name, "/decks/#{deck.id}" %>
-          <%= link_to "Edit", "/decks/#{deck.id}/edit", :class => "tiny button radius" %>
-          <%= link_to "Delete", "/decks/#{deck.id}", method: :delete, data: { confirm: 'Are you sure?' }, :class => "tiny button alert radius" %>
-        </li>
-      <% end %>
-    </ul>
+  <div class="small-12 columns">
+    <h1>Decks</h1>
   </div>
-  <div class="small-8 columns"></div>
 </div>
+<div class="row">
+  <div class="small-12 columns">
+    <p><%= link_to "New Deck", new_deck_url, :class => "small button success radius" %></p>
+  </div>
+</div>
+<div class="row">
+  <fieldset>
+    <legend>Choose a Language</legend>
+    <% @decks.each do |deck| %>
+    <div class="small-8 columns"><%= link_to deck.name, deck_url(deck.id) %></div>
+    <div class="small-4 columns" style="text-align:right;">
+      <%= link_to "Edit", 
+                   edit_deck_url(deck.id), 
+                   :class => "tiny button radius" %>
+      <%= link_to "Delete", 
+                   deck_url(deck.id), 
+                   method: :delete, 
+                   data: { confirm: 'Are you sure?' }, 
+                   :class => "tiny button alert radius" %>
+    </div>
+  <% end %>
+  </fieldset>
+</div>
+

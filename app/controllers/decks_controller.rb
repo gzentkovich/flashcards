@@ -16,7 +16,7 @@ class DecksController < ApplicationController
     @deck = Deck.new(params[:deck])
 
     if @deck.save
-      redirect_to "/decks", notice: 'Decks was successfully created.'
+      redirect_to decks_url, notice: 'Decks was successfully created.'
     else
       render action: "new"
     end
@@ -30,8 +30,7 @@ class DecksController < ApplicationController
     @deck = Deck.find(params[:id])
 
     if @deck.update_attributes(params[:deck])
-      #redirect_to "/decks/#{@deck.id}", notice: "The #{@deck.name} was successfully updated."
-      redirect_to "/decks", notice: "The #{@deck.name} was successfully updated."
+      redirect_to decks_url, notice: 'The deck was successfully updated.'
     else
       render action: "edit"
     end
@@ -40,7 +39,7 @@ class DecksController < ApplicationController
   def destroy
     @deck = Deck.find(params[:id])
     @deck.destroy
-    redirect_to root_url, notice: "The #{@deck.name} has been successfully deleted."
+    redirect_to decks_url, notice: 'The deck has been successfully deleted.'
   end
 
 end

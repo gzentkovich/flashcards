@@ -10,7 +10,9 @@
  *
  *= require_self
  *= require foundation_and_overrides
+ *= require responsive-tables
  *= require_tree .
  */
 
 @import "foundation_and_overrides";
+@import "responsive-tables";
