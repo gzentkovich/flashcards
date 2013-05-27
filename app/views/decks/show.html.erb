@@ -2,8 +2,13 @@
 <div class="row">
   <div class="small-12 columns">
     <fieldset>
-    <legend>Deck</legend>
-      <p> <%= @deck.name %> </p>
+    <legend>Front</legend>
+    <p> <%= @deck.name %> </p>
+    <ul style="list-style:none;">
+      <% @cards.each do |card| %>
+        <li><%= link_to card.front, [@deck, card] %></li>
+      <% end %>
+    </ul>
       <%= link_to "Back", decks_url, :class => "small button secondary radius" %><br />
     </fieldset>
   </div>
