@@ -1,10 +1,8 @@
 class CardsController < ApplicationController
 
   def show
-    @card = Card.find(params[:id])
-    @cardback = @card.back
-    #@deck = Deck.find(params[:id])
-    #@cards = @deck.cards
+    @deck = Deck.find(params[:deck_id])
+    @card = @deck.cards.find(params[:id])
   end
 
 end
