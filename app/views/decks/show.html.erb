@@ -2,14 +2,15 @@
 <div class="row">
   <div class="small-12 columns">
     <fieldset>
+    <%= link_to "New Card", new_deck_card_url(@deck), :class => "small button success radius" %><br />
     <legend>Front</legend>
-    <p> <%= @deck.name %> </p>
+    <h3> <%= @deck.name %> </h3>
     <ul style="list-style:none;">
       <% @cards.each do |card| %>
         <li><%= link_to card.front, [@deck, card] %></li>
       <% end %>
     </ul>
-      <%= link_to "Back", decks_url, :class => "small button secondary radius" %><br />
+      <%= link_to "Decks", decks_url, :class => "small button secondary radius" %>
     </fieldset>
   </div>
 </div>

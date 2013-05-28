@@ -3,9 +3,9 @@
   <div class="small-12 columns">
     <fieldset>
     <legend>Back</legend>
-    <p> <%= @cardback %> </p>
-    <%= print @cardback %>
-      <%= link_to "Back", deck_url(), :class => "small button secondary radius" %><br />
+    <p> <%= @card.back %> </p>
+    <p> <%= @card.front %> </p>
+      <%= link_to "Back", @deck, :class => "small button secondary radius" %><br />
     </fieldset>
   </div>
 </div>

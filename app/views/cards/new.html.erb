@@ -1,0 +1,15 @@
+<%= form_for([@deck, @card]) do |f| %>
+  <div class="row">
+    <div class="small-12 columns">
+      <fieldset>
+        <legend> Card </legend>
+          <%= f.label :front %>
+          <%= f.text_field :front %>
+          <%= f.label :back %>
+          <%= f.text_field :back %>
+          <%= f.submit "New Card", :class => "small button success radius" %>
+          <%= link_to "Cancel", decks_url, :class => "small button secondary radius" %>
+      </fieldset>
+    </div>
+  </div>
+<% end %>
