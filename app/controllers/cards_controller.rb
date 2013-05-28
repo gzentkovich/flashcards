@@ -10,6 +10,13 @@ class CardsController < ApplicationController
     @card = @deck.cards.new
   end
 
+  def create
+    @deck = find_deck
+    @card = @deck.cards.new(params[:card])
+    @card.save
+    redirect_to @deck
+  end
+
   private
 
   def find_deck
