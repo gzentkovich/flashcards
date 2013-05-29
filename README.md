@@ -1,5 +1,5 @@
-Flashcards app
-==============
+Flashcards
+==========
 
 Intro to Rails Ruby - Flashcards (web version)
 
