@@ -1,20 +1,21 @@
 class DecksController < ApplicationController
+  before_filter :authenticate
 
   def index
-    @decks = Deck.all
+    @decks = current_user.decks
   end
 
   def show
-    @deck = Deck.find(params[:id])
+    @deck = find_deck
     @cards = @deck.cards
   end
 
   def new
-    @deck = Deck.new
+    @deck = current_user.decks.new
   end
 
   def create
-    @deck = Deck.new(params[:deck])
+    @deck = current_user.decks.new(params[:deck])
 
     if @deck.save
       redirect_to decks_url, notice: 'Decks was successfully created.'
@@ -24,11 +25,11 @@ class DecksController < ApplicationController
   end
 
   def edit
-    @deck = Deck.find(params[:id])
+    @deck = find_deck
   end
 
   def update
-    @deck = Deck.find(params[:id])
+    @deck = find_deck
 
     if @deck.update_attributes(params[:deck])
       redirect_to decks_url, notice: 'The deck was successfully updated.'
@@ -38,9 +39,14 @@ class DecksController < ApplicationController
   end
 
   def destroy
-    @deck = Deck.find(params[:id])
+    @deck = find_deck
     @deck.destroy
     redirect_to decks_url, notice: 'The deck has been successfully deleted.'
   end
 
+  private
+
+  def find_deck
+    current_user.decks.find(params[:id])
+  end
 end
