@@ -10,7 +10,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: flashcards_development
+  database: flashcards_test
   host: localhost
   pool: 5
   username: <%= ENV["APP_USERNAME"] %>
