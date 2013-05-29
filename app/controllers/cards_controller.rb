@@ -3,7 +3,6 @@ class CardsController < ApplicationController
 
   def show
     @deck = find_deck
-    # @card = @deck.cards.find(params[:id])
     @card = find_card(@deck)
   end
 
@@ -21,7 +20,6 @@ class CardsController < ApplicationController
 
   def edit
     @deck = find_deck
-    # @card = @deck.cards.find(params[:id])
     @card = find_card(@deck)
   end
 
@@ -42,11 +40,11 @@ class CardsController < ApplicationController
   private
 
   def find_deck
-    current_user.cards.find(params[:deck_id])
+    current_user.decks.find(params[:deck_id])
   end
 
   def find_card deck
-    @deck.cards.find(params[:id])
+    deck.cards.find(params[:id])
   end
 
 end

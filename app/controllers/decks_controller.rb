@@ -30,7 +30,6 @@ class DecksController < ApplicationController
 
   def update
     @deck = find_deck
-
     if @deck.update_attributes(params[:deck])
       redirect_to decks_url, notice: 'The deck was successfully updated.'
     else
