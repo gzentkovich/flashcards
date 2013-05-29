@@ -15,8 +15,11 @@ Running the app
 
 Make sure you are using Ruby 1.9 (there is a .ruby-version included) and then:
 
-  bundle
-  rake db:create db:migrate
-  foreman start
+| run |
+|-----|
+| `bundle` |
+|  `rake` db:create |
+|  `rake` db:migrate |
+|  `foreman start` -p 5500 |
 
 Open on http://localhost:5500
