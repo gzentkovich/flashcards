@@ -5,9 +5,18 @@
     <%= link_to "New Card", new_deck_card_url(@deck), :class => "small button success radius" %><br />
     <legend>Front</legend>
     <h3> <%= @deck.name %> </h3>
-    <ul style="list-style:none;">
       <% @cards.each do |card| %>
-        <li><%= link_to card.front, [@deck, card] %></li>
+        <div class="small-8 columns"><%= link_to card.front, [@deck, card] %></div>
+        <div class="small-4 columns" style="text-align:right;">
+          <%= link_to "Edit",
+                       edit_deck_card_url(@deck, card),
+                       :class => "tiny button radius" %>
+          <%= link_to "Delete",
+                       [@deck, card],
+                       method: :delete,
+                       data: { confirm: 'Are you sure?' },
+                       :class => "tiny button alert radius" %>
+        </div>
       <% end %>
     </ul>
       <%= link_to "Decks", decks_url, :class => "small button secondary radius" %>

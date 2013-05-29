@@ -15,13 +15,13 @@
     <% @decks.each do |deck| %>
     <div class="small-8 columns"><%= link_to deck.name, deck_url(deck.id) %></div>
     <div class="small-4 columns" style="text-align:right;">
-      <%= link_to "Edit", 
-                   edit_deck_url(deck.id), 
+      <%= link_to "Edit",
+                   edit_deck_url(deck.id),
                    :class => "tiny button radius" %>
-      <%= link_to "Delete", 
-                   deck_url(deck.id), 
-                   method: :delete, 
-                   data: { confirm: 'Are you sure?' }, 
+      <%= link_to "Delete",
+                   deck_url(deck.id),
+                   method: :delete,
+                   data: { confirm: 'Are you sure?' },
                    :class => "tiny button alert radius" %>
     </div>
   <% end %>
