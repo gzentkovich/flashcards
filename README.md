@@ -1,5 +1,6 @@
-Flashcards [![Build Status]](https://travis-ci.org/gzentkovich/flashcards)
+Flashcards [![Build Status](https://secure.travis-ci.org/gzentkovich/flashcards.png?branch=master)](https://travis-ci.org/gzentkovich/flashcards)
 ==========
+
 Intro to Rails Ruby - Flashcards (web version)
 
 It's a Rails 3.2 app.
