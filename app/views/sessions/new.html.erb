@@ -1,0 +1,12 @@
+<%= form_for(:session, url: sessions_path) do |f| %>
+  <div class="row">
+    <div class="small-12 columns">
+      <fieldset>
+        <legend>Sign in </legend>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%= f.submit "Sign in", :class => "small button success radius" %>
+      </fieldset>
+    </div>
+  </div>
+<% end %>

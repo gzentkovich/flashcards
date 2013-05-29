@@ -1,0 +1,12 @@
+<%= form_for(@user) do |f| %>
+  <div class="row">
+    <div class="small-12 columns">
+      <fieldset>
+        <legend> New User </legend>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%= f.submit "Sign up", :class => "small button success radius" %>
+      </fieldset>
+    </div>
+  </div>
+<% end %>
