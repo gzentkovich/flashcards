@@ -1,7 +1,15 @@
 language: ruby
 rvm:
   - 1.9.3
+
+env:
+- DB=postgresql
+
+script:
+- RAILS_ENV=test bundle exec rake --trace db:migrate
+
 before_script:
   - psql -c 'create database flashcards_test;' -U postgres
+
 notifications:
   email: false
